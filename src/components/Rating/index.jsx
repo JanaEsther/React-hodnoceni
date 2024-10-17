@@ -4,18 +4,16 @@ import './style.css';
 
 export const Rating = () => {
   const [rating, setRating] = useState(0);
-  
+
   return (
     <div className="rating">
       <div className="rating__value">{rating}</div>
       <div className="rating__stars">
-        {[1, 2, 3, 4, 5].map((value) => (
-          <Star
-          key={value}
-          value={value}
-          onSelect={setRating}
-          />
-        ))}
+        <Star value={1} glowing={rating >= 1} onSelect={setRating} />
+        <Star value={2} glowing={rating >= 2} onSelect={setRating} />
+        <Star value={3} glowing={rating >= 3} onSelect={setRating} />
+        <Star value={4} glowing={rating >= 4} onSelect={setRating} />
+        <Star value={5} glowing={rating >= 5} onSelect={setRating} />
       </div>
     </div>
   );
