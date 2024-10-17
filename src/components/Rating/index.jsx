@@ -9,11 +9,13 @@ export const Rating = () => {
     <div className="rating">
       <div className="rating__value">{rating}</div>
       <div className="rating__stars">
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-        <Star />
+        {[1, 2, 3, 4, 5].map((value) => (
+          <Star
+          key={value}
+          value={value}
+          onSelect={setRating}
+          />
+        ))}
       </div>
     </div>
   );
