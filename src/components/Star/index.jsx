@@ -3,7 +3,6 @@ import './style.css';
 export const Star = ({ value, glowing, onSelect }) => {
 
   const handleStar = () => {
-    glowing === true;
     onSelect(value); // Volani onSelect s value star
   };
 
